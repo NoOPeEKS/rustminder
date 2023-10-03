@@ -38,17 +38,18 @@ pub fn remove_todo(todo: String, todo_vec: &mut Vec<String>) {
         }
     }
     println!("Removed vector: {:?}", todo_vec);
-    /*
+
     let mut file_ref = OpenOptions::new()
-        .append(false)
+        .write(true)
         .create(true)
         .open("./list.td")
         .expect("Could not open file when removing");
+    let mut string_to_file = String::new();
     for item in todo_vec {
-        let new_string = item.to_string() + "\n";
-        file_ref
-            .write_all(new_string.as_bytes())
-            .expect("Could not write to file when removing");
+        let new_string = item.clone() + "\n";
+        string_to_file.push_str(&new_string);
     }
-    */
+    file_ref
+        .write_all(string_to_file.as_bytes())
+        .expect("Could not write to file when removing");
 }
