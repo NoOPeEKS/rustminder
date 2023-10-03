@@ -19,7 +19,9 @@ fn main() {
         rustminder::add_todo(args.task_name, &mut todos);
     } else if args.action == "remove" {
         rustminder::remove_todo(args.task_name, &mut todos);
+    } else if args.action == "show" && args.task_name == "all" {
+        rustminder::show_todos(&todos);
     } else {
-        println!("Invalid argument or not implemented yet!");
+        println!("Wrong parameters or functionality not yet implemented!");
     }
 }

@@ -24,7 +24,7 @@ pub fn add_todo(todo: String, todo_vec: &mut Vec<String>) {
     println!("Vector with added param: {:?}", todo_vec)
 }
 
-pub fn show_todos(todo_vec: &mut Vec<String>) {
+pub fn show_todos(todo_vec: &Vec<String>) {
     for item in todo_vec {
         println!("{item}");
     }
