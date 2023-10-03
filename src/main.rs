@@ -1,7 +1,5 @@
 // Main features are: add, remove, done, sort, and reset.
-use clap::Args;
 use clap::Parser;
-use clap::Subcommand;
 
 #[derive(Parser)]
 struct CliArgs {
@@ -19,8 +17,8 @@ fn main() {
 
     if args.action == "add" {
         rustminder::add_todo(args.task_name, &mut todos);
-    } else if args.action == "show" {
-        rustminder::show_todos(&mut todos);
+    } else if args.action == "remove" {
+        rustminder::remove_todo(args.task_name, &mut todos);
     } else {
         println!("Invalid argument or not implemented yet!");
     }

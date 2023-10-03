@@ -29,3 +29,26 @@ pub fn show_todos(todo_vec: &mut Vec<String>) {
         println!("{item}");
     }
 }
+
+pub fn remove_todo(todo: String, todo_vec: &mut Vec<String>) {
+    let cloned_vec = todo_vec.clone();
+    for (i, item) in cloned_vec.iter().enumerate() {
+        if item.to_string() == todo {
+            todo_vec.remove(i);
+        }
+    }
+    println!("Removed vector: {:?}", todo_vec);
+    /*
+    let mut file_ref = OpenOptions::new()
+        .append(false)
+        .create(true)
+        .open("./list.td")
+        .expect("Could not open file when removing");
+    for item in todo_vec {
+        let new_string = item.to_string() + "\n";
+        file_ref
+            .write_all(new_string.as_bytes())
+            .expect("Could not write to file when removing");
+    }
+    */
+}
