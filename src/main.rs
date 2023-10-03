@@ -1,5 +1,9 @@
-// Main features are: add, remove, done, sort, and reset.
+// Main features are: add, remove, show, done, sort, and reset.
 use clap::Parser;
+
+fn main() {
+    run();
+}
 
 #[derive(Parser)]
 struct CliArgs {
@@ -7,7 +11,7 @@ struct CliArgs {
     task_name: String,
 }
 
-fn main() {
+fn run() {
     let args: CliArgs = CliArgs::parse();
     println!("Args: {}, {}", args.action, args.task_name);
     let mut todos: Vec<String> = Vec::new();
