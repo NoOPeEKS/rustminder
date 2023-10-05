@@ -8,6 +8,6 @@ cargo build --release
 rustminder <OPTION> <TODO_TASK>
 ```
 ### Options available are:
-1. add
-2. remove
+1. add <TODO_TASK>
+2. remove <TODO_TASK> OR <all>
 3. show all
