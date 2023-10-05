@@ -9,5 +9,5 @@ rustminder <OPTION> <TODO_TASK>
 ```
 ### Options available are:
 1. add <TODO_TASK>
-2. remove <TODO_TASK> OR <all>
+2. remove <TODO_TASK> or all
 3. show all
