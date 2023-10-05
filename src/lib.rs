@@ -46,3 +46,7 @@ pub fn remove_todo(todo: String, todo_vec: &mut Vec<String>) {
     }
     fs::write("./list.td", &string_to_file).expect("Could not write to file");
 }
+
+pub fn remove_all() {
+    fs::write("./list.td", "").expect("Could not remove list contents");
+}

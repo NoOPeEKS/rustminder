@@ -1,4 +1,4 @@
-// Main features are: add, remove, show, done, sort, and reset.
+// Main features are: add, remove, show.
 use clap::Parser;
 
 fn main() {
@@ -22,7 +22,11 @@ fn run() {
     if args.action == "add" {
         rustminder::add_todo(args.task_name, &mut todos);
     } else if args.action == "remove" {
-        rustminder::remove_todo(args.task_name, &mut todos);
+        if args.task_name != "all" {
+            rustminder::remove_todo(args.task_name, &mut todos);
+        } else {
+            rustminder::remove_all();
+        }
     } else if args.action == "show" && args.task_name == "all" {
         rustminder::show_todos(&todos);
     } else {
